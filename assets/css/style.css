@@ -1,0 +1,162 @@
+/* Profil butonu */
+.openProfile {
+    width: 50px;
+    height: 50px;
+    position: fixed;
+    top: 10px; /* Düzgün yerleşim */
+    right: 10px; /* Düzgün yerleşim */
+    border-radius: 50%; /* Yuvarlak profil resmi */
+    background-color: #007bff; /* Buton rengi */
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.profilePhoto {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+/* Modal background */
+.modal {
+    display: none; /* JavaScript ile gösterilecek */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+/* Modal içerik */
+.profileModol {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    position: relative;
+}
+
+/* Modal kapama butonu */
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 24px;
+}
+
+/* Login ve register butonları */
+#loginBtn, #registerBtn {
+    padding: 10px 15px;
+    background-color: #007bff;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#loginBtn:hover, #registerBtn:hover {
+    background-color: #0056b3;
+}
+
+/* Input alanları */
+.emailInputRegister, .keyInputRegister,.emailInputLogin, .keyInputLogin, .usernameInputRegister {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+/* İkonlar */
+.emailIcon, .keyIcon {
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+    margin-right: 8px;
+}
+
+/* Login/Register formları */
+.loginModol, .registerModol {
+    display: none; /* Varsayılan olarak gizli */
+}
+
+/* Modal başlık kısmı */
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* Benim Kodlarım burada bitiyor */
+
+
+.modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+    width: 300px;
+}
+
+
+
+
+.content {
+    display: grid;
+    grid-template-columns: repeat(5, 150px);
+    gap: 10px;
+    padding: 20px;
+    justify-content: center;
+}
+
+.contentimg {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #212228;
+    overflow: auto;
+}
+
+.content-item {
+    width: 150px;
+    background-color: #AFDA9F;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    font-weight: bold;
+    cursor: grab;
+    user-select: none;
+}
