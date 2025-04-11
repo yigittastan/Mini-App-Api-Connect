@@ -242,11 +242,64 @@ document.getElementById("add-content-form").addEventListener("submit", function 
     };
     reader.readAsDataURL(img);
 });
+const emailLogin = document.getElementById("emailInputLogin").value;
+const passwordLogin = document.getElementById("keyInputLogin").value;
+const usernameRegister = document.getElementById("usernameInputRegister").value;
+const emailRegister = document.getElementById("emailInputRegister").value;
+const passwordRegister = document.getElementById("keyInputRegister").value;
+
+function postLogin() {
+    const emailInputLogin = document.getElementById('emailInputLogin');
+    const keyInputLogin = document.getElementById('keyInputLogin');
+
+    document.getElementById("loginModol").addEventListener("submit", function (event) {
+        event.preventDefault();  // Formun sayfayı yeniden yüklemesini engeller
+
+        // Kullanıcı adı ve şifreyi al
+        const emailLogin = document.getElementById("emailInputLogin").value;
+        const passwordLogin = document.getElementById("keyInputLogin").value;
+
+
+
+        fetch('/api/login', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ username, email, password })
+        })
+            .then(response => response.json())
+            .then(data => {
+                console.log(data);
+            })
+            .catch(error => console.error('Error:', error));
+    });
+}
+
 function postRegister() {
     const usernameInputRegister = document.getElementById('usernameInputRegister');
-    const emailIconRegister = document.getElementById('emailInputRegister');
+    const emailInputRegister = document.getElementById('emailInputRegister');
     const keyInputRegister = document.getElementById('keyInputRegister');
 
+    document.getElementById("registerModol").addEventListener("submit", function (event) {
+        event.preventDefault();  // Formun sayfayı yeniden yüklemesini engelle
+
+        // API'ye veya sunucuya gönderme
+        fetch('/api/register', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ username, email, password })
+        })
+            .then(response => response.json())
+            .then(data => {
+                console.log(data);
+            })
+            .catch(error => console.error('Error:', error));
+    });
 }
+postLogin()
+postRegister()
 
 module.exports = { usernameInputRegister, emailIconRegister, keyInputRegister }

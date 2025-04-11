@@ -1,6 +1,48 @@
 const axios = require('axios');
 const API_URL = process.env.API_URL;
 
+
+
+function postLogin() {
+    document.getElementById("loginModol").addEventListener("submit", function (event) {
+        event.preventDefault();  // Formun sayfayı yeniden yüklemesini engeller
+        fetch('/api/login', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ username, email, password })
+        })
+            .then(response => response.json())
+            .then(data => {
+                console.log(data);
+            })
+            .catch(error => console.error('Error:', error));
+    });
+}
+
+function postRegister() {
+    document.getElementById("registerModol").addEventListener("submit", function (event) {
+        event.preventDefault();  // Formun sayfayı yeniden yüklemesini engelle
+
+        // API'ye veya sunucuya gönderme
+        fetch('/api/register', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ username, email, password })
+        })
+            .then(response => response.json())
+            .then(data => {
+                console.log(data);
+            })
+            .catch(error => console.error('Error:', error));
+    });
+}
+
+
+
 // Kullanıcı kaydı
 exports.register = async (req, res) => {
     try {
